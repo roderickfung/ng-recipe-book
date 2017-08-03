@@ -7,6 +7,7 @@ import { RecipesComponent } from './app/recipes/recipes.component';
 import { RecipeListComponent } from './app/recipes/recipe-list/recipe-list.component';
 import { RecipeItemComponent } from './app/recipes/recipe-list/recipe-item/recipe-item.component';
 import { RecipeDetailComponent } from './app/recipes/recipe-detail/recipe-detail.component';
+import { RecipeInputComponent } from './app/recipes/recipe-input/recipe-input.component';
 
 import { ShoppingListComponent } from './app/shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './app/shopping-list/shopping-edit/shopping-edit.component';
@@ -19,8 +20,9 @@ import { ShoppingEditComponent } from './app/shopping-list/shopping-edit/shoppin
     RecipeListComponent,
     RecipeItemComponent,
     RecipeDetailComponent,
+    RecipeInputComponent,
     ShoppingListComponent,
-    ShoppingEditComponent
+    ShoppingEditComponent,
   ],
   imports: [
     BrowserModule

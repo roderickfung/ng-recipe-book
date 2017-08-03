@@ -1,0 +1,34 @@
+
+<div class='form-horizontal'>
+  <div class='form-group-sm'>
+    <label class='col-xs-2 control-label'>Recipe Name</label>
+    <div class='col-xs-6'>
+      <input type='text' #nameInput class='form-control'>
+    </div>
+  </div>
+  <div class='form-group-sm'>
+    <div class='col-xs-4'>
+      <div class='input-group'>
+        <label class='input-group-btn'>
+        <span class='btn btn-default btn-sm'>
+          Browse&hellip; <input type='file' style='display: none' #fileInput>
+        </span>
+      </label>
+        <input type='text' class='form-control' readonly>
+      </div>
+    </div>
+  </div>
+  <div class='form-group-sm'>
+    <label class='col-xs-2 control-label'>Recipe Details</label>
+    <div class='col-xs-10'>
+      <textarea type='text' #descriptionInput class='form-control' rows='3'></textarea>
+    </div>
+  </div>
+  <div class='form-group-sm col-xs-offset-2 col-xs-10'>
+    <span
+    class='btn btn-default btn-sm btn-block'
+    (click)='onSubmitRecipe()'>
+      New Recipe
+    </span>
+  </div>
+</div>

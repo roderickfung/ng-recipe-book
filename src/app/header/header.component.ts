@@ -12,7 +12,6 @@ export class HeaderComponent {
   constructor() {}
 
   public onSelect(link: string) {
-    console.log('what is page:', link);
     this.pageName.emit(link);
   }
 }
