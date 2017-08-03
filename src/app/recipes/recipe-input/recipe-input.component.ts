@@ -8,7 +8,7 @@ import { Component, ElementRef, ViewChild, Output, EventEmitter } from '@angular
 })
 export class RecipeInputComponent {
 
-  @Output() recipeObj = new EventEmitter<Recipe>();
+  @Output() recipeObj = new EventEmitter<{name: string, description: string, image: string}>();
   @ViewChild('nameInput') public newName: ElementRef;
   @ViewChild('fileInput') public newFile: ElementRef;
   @ViewChild('descriptionInput') public content: ElementRef;
@@ -18,7 +18,7 @@ export class RecipeInputComponent {
     const content = this.content.nativeElement.value;
     const image = this.newFile.nativeElement.value;
     console.log('Image File:', image);
-    this.recipeObj.emit(new Recipe(name, content, image));
+    this.recipeObj.emit({name: name, description: content, image: image});
   }
 
 }
