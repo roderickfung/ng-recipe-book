@@ -9,10 +9,24 @@ import { Component, Input, OnInit } from '@angular/core';
 export class RecipeListComponent implements OnInit {
 
   @Input() public recipes: Recipe[];
+  public details: Object = {};
 
   constructor() {}
 
   ngOnInit() {
+  }
+
+  public getDetails(selectedRecipe: Recipe) {
+    console.log('show details: ', selectedRecipe);
+    this.details = selectedRecipe;
+  }
+
+  public renderDetails() {
+    if (Object.keys(this.details).length > 0) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
 }

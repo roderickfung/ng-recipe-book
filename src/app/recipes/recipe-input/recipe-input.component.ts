@@ -9,34 +9,54 @@ import { Component, ElementRef, ViewChild, Output, EventEmitter } from '@angular
 })
 export class RecipeInputComponent {
 
-  @Output() recipeObj = new EventEmitter<{name: string, description: string, image: string}>();
+  @Output() recipeObj = new EventEmitter<{name: string, description: string, image: object}>();
 
   // @ViewChild('nameInput') public newName: ElementRef;
-  @ViewChild('fileInput') public newFile: ElementRef;
+  // @ViewChild('fileInput') public newFile: ElementRef;
   // @ViewChild('descriptionInput') public content: ElementRef;
-  
+
   newName = '';
-  uploadFile = '';
+  uploadFile: any = {};
   newDesc = '';
 
   public isDisabled() {
-    if (this.newName.length > 0 && this.uploadFile.length > 0 && this.newDesc.length > 0) {
-      return true;
-    } else {
+    if (this.newName.length > 0 && this.uploadFile.type !== undefined && this.newDesc.length > 0) {
       return false;
+    } else {
+      return true;
     }
   }
 
-  public onSubmitReceipt() {
-    console.log(this.uploadFile);
+  public getFile(event) {
+    console.log('get file function', event.target.files[0]);
+    this.uploadFile = event.target.files[0];
+    console.log(this.uploadFile.type);
+  }
+
+  public getFileName() {
+    return this.uploadFile.name ? this.uploadFile.name : '';
+  }
+
+  public onSubmitRecipe() {
+    console.log('image file: ', this.uploadFile);
+    console.log('title: ', this.newName);
+    console.log('description: ', this.newDesc);
+
     // const image = this.newFile.nativeElement.value;
-    if (ImageUtils.imageFormatCheck(this.uploadFile)) {
+    if (ImageUtils.imageObjectFormatCheck(this.uploadFile)) {
       this.recipeObj.emit({
         name: this.newName,
         description: this.newDesc,
         image: this.uploadFile
       });
+      this._recipeReset();
     }
+  }
+
+  private _recipeReset() {
+    this.newName = '';
+    this.newDesc = '';
+    this.uploadFile = {};
   }
 
   // public onSubmitRecipe() {

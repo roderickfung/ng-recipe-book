@@ -11,10 +11,10 @@
       <div class='input-group'>
         <label class='input-group-btn'>
         <span class='btn btn-default btn-sm'>
-          Browse&hellip; <input type='file' style='display: none' [(ngModel)]='uploadFile'>
+          Browse ... <input type='file' style='display: none' (change)='getFile($event)'>
         </span>
       </label>
-        <input type='text' class='form-control' readonly>
+        <input type='text' class='form-control' readonly [value]='getFileName()'>
       </div>
     </div>
   </div>

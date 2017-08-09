@@ -1,32 +1,29 @@
-<div class="row">
-  <div class="col-xs-12">
-    <img src='' alt='' class='image-responsive' />
-  </div>
-</div>
-<div class="row">
-  <div class="col-xs-12">
-    <h3>Recipe Name</h3>
-  </div>
-</div>
-<div class="row">
-  <div class="col-xs-12">
-    <div class="btn-group">
-      <button type='button' class='btn btn-primary dropdown-toggle'>Manage Recipe <span class='caret'></span></button>
-      <ul class='dropdown-menu'>
-        <li><a href='#'>Add Ingredients</a></li>
-        <li><a href='#'>Edit Recipe</a></li>
-        <li><a href='#'>Delete Recipe</a></li>
-      </ul>
+<div class='list-group-item clearfix'>
+  <div class='row'>
+    <div class='col-xs-12'>
+      <div class='pull-left'>
+        <h5 class='list-group-item-heading'>{{recipeItem.name}}</h5>
+      </div>
+      <div class='pull-right'>
+        <div class='btn-group-xs'>
+          <button type='button' class='btn btn-default btn-xs dropdown-toggle'><span class='caret'></span></button>
+          <ul class='dropdown-menu'>
+            <li><a href='#'>Add Ingredients</a></li>
+            <li><a href='#'>Edit Recipe</a></li>
+            <li><a href='#'>Delete Recipe</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
-</div>
-<div class="row">
-  <div class="col-xs-12">
-    <p>Description</p>
+  <div class='row'>
+    <div class='col-xs-12'>
+      <p class='list-group-item-text'>{{recipeItem.description}}</p>
+    </div>
   </div>
-</div>
-<div class="row">
-  <div class="col-xs-12">
-    <p>Ingredients</p>
+  <div class='row'>
+    <div class='col-xs-12'>
+      <img [src]='recipeItem.imagePath.name' alt='{{recipeItem.name}}' class='image-responsive' />
+    </div>
   </div>
 </div>
