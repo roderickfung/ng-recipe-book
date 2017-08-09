@@ -2,23 +2,28 @@
 <hr />
 <div class='row' style='padding-bottom: 2rem'>
   <div class='col-md-10 col-sm-10 col-xs-12'>
-    <app-shopping-edit></app-shopping-edit>
+    <app-shopping-edit (onAdd)='addIngredient($event)' ></app-shopping-edit>
   </div>
 </div>
-<div class='row' style='padding-bottom: 2rem'>
-  <div class='col-md-10 col-sm-10 col-xs-12'>
-    <ul class="list-group">
-      <a class='list-group-item' style='cursor: pointer' *ngFor='let ingredient of ingredients'>
-        {{ ingredient.name }} ({{ ingredient.amount}})
+<hr />
+<div class='row'>
+  <div class='col-xs-10 '>
+    <ul class='list-group'>
+      <a class="list-group-item clearfix" *ngFor='let ingredient of ingredients'>
+        <div class='pull-left'>
+          <a class='list-group-item-heading' style='cursor: pointer'>
+            {{ ingredient.name }} ({{ ingredient.amount}})
+          </a>
+        </div>
+        <span class='pull-right'>
+          <button class='btn btn-xs btn-danger' (click)='deleteIngredient(ingredient)'>
+            x
+          </button>
+        </span>
       </a>
     </ul>
   </div>
-</div>
-<div class='row'>
-  <div class='col-md-10 col-sm-10 col-xs-8'>
-    <p>the list itself goes here</p>
-  </div>
-  <div class='col-md-2 col-sm-2 col-xs-4'>
-    <p>delete btn maybe?</p>
+  <div class='col-xs-2'>
+    
   </div>
 </div>
