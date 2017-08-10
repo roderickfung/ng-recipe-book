@@ -10,4 +10,15 @@
       <app-shopping-list></app-shopping-list>
     </div>
   </div>
+  <hr />
+  <div class='row'>
+    <div class='col-xs-12'>
+      <p appHighlight>
+        Basic Directive Test: Tries to directly access the DOM, but sometimes angular doesn't need to run with a DOM.
+      </p>
+      <p appAdvHighlight [defaultColor]="'transparent'" highlightColor='yellow'>
+        Advance Directive Test: Using renderer is a better approach.
+      </p>
+    </div>
+  </div>
 </div>
