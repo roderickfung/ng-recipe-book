@@ -1,11 +1,13 @@
 <app-header (pageName)='onNavigate($event)'></app-header>
 <div class='container'>
-  <div class='row' *ngIf="page =='recipes'">
+  <!-- <div class='row' *ngIf="page =='recipes'"> -->
+  <div class='row' *appUnless="page =='shopping-list'">
     <div class='col-xs-12'>
       <app-recipes></app-recipes>
     </div>
   </div>
-  <div class='row' *ngIf="page =='shopping-list'">
+  <!-- <div class='row' *ngIf="page =='shopping-list'"> -->
+  <div class='row' *appUnless="page == 'recipes'">
     <div class='col-xs-12'>
       <app-shopping-list></app-shopping-list>
     </div>

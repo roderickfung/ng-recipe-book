@@ -1,5 +1,7 @@
 import { AdvanceHighlightDirective } from './directives/advance-highlight.directive';
 import { HighlightDirective } from './directives/highlight.directive';
+import { UnlessDirective } from './directives/unless.directive';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
@@ -27,7 +29,8 @@ import { ShoppingEditComponent } from './app/shopping-list/shopping-edit/shoppin
     ShoppingListComponent,
     ShoppingEditComponent,
     HighlightDirective,
-    AdvanceHighlightDirective
+    AdvanceHighlightDirective,
+    UnlessDirective
   ],
   imports: [
     BrowserModule,
